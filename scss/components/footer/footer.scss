@@ -1,0 +1,121 @@
+.footer {
+  background-color: #26282C;
+
+
+  &__text {
+    color: $light-color;
+    font-size: $font-sm;
+    font-weight: 400;
+    flex-direction: column;
+    gap: 21px;
+    padding-top: 16px;
+
+    &-i {
+      color: #FFFFFF;
+      font-size: 20px;
+    }
+
+    &-img2 {
+      max-width: 120px;
+      height: 37px;
+    }
+
+    &-p {
+      padding-left: 10px;
+      color: $light-color;
+    }
+  }
+  &__headings {
+    color: #FFFFFF;
+    font-size: $font-norm;
+    font-weight: 700;
+    padding-bottom: 16px;
+  }
+
+  &__list {
+    flex-direction: column;
+    gap: 2px;
+
+    &-option a {
+      color: $light-color;
+      font-size: $font-sm;
+      font-weight: 400;
+      &:hover {
+        color: $accent-color;
+      }
+    }
+  }
+
+  &__row {
+    padding: 47px 0 25px 0;
+  }
+
+  #footer__input {
+    width: 198px;
+    height: 45px;
+    font-weight: 400;
+    font-size: $font-md;
+    background-color: $footer-color;
+    border-radius: 40px;
+    border: 1px solid #515151;
+    padding-left: 29px;
+  }
+
+  &__btn {
+    width: 198px;
+    height: 45px;
+    font-weight: 400;
+    font-size: $font-md;
+    background-color: $footer-color;
+    border-radius: 40px;
+    border: 1px solid #515151;
+    padding-left: 29px;
+    color: #FFFFFF;
+    margin-bottom: 32px;
+  }
+
+  &__data {
+    flex-direction: column;
+    padding-left: 143px;
+  }
+
+  &-i {
+    position: absolute;
+    top: 35px;
+    right: 10px;
+    color: $accent-color;
+  }
+
+  &__form {
+    position: relative;
+    padding: 23px 0 8px 0;
+  }
+
+  &__social-list {
+    gap: 5px;
+  }
+
+  &__after {
+    background-color: black;
+    padding: 10px 0;
+
+    &-i {
+      color: $light-color
+    }
+
+    &-p {
+      color: $light-color;
+    }
+
+    &-col {
+      gap: 20px;
+    }
+
+    &-btn {
+      background-color: $accent-color;
+      border-radius: 18px;
+      width: 30px;
+      height: 30px;
+    }
+  }
+}

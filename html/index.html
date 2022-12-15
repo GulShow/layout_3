@@ -1,0 +1,1729 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<header class="header">
+    <div class="header__top">
+        <div class="container">
+            <div class="row">
+                <div class="col-6">
+                    <div class="header__contact">
+                        <a href="tel:+330499632050">
+                            <i class="bi bi-telephone header__contact-icon"></i>
+                            <span>+33 (0)4 99 63 20 50</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="header__lang-switcher  justify-content-end d-flex">
+                        <div class="dropdown">
+                            <button class="btn btn-sm dropdown-toggle p-0 border-0" type="button" id="lang-menu"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-globe2 header__contact-globe-icon"></i>
+                                <span>English</span>
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="lang-menu">
+                                <li>
+                                    <button class="dropdown-item" type="button">Ukrainian</button>
+                                </li>
+                                <li>
+                                    <button class="dropdown-item" type="button">Turkish</button>
+                                </li>
+                                <li>
+                                    <button class="dropdown-item" type="button">German</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="header__navigation">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <img class="img-fluid" src="../assets/logo.png" alt="logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                        <li class="nav-item header__search-wrapper d-flex align-items-center">
+                            <a class="nav-link header__search p-0" href="#" data-bs-toggle="modal"
+                               data-bs-target="#searchModal">
+                                <i class="bi bi-search"></i>
+                            </a>
+                        </li>
+
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle p-0" href="#" id="productsDropdown" role="button"
+                               data-bs-toggle="dropdown" aria-expanded="false">
+                                Products
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="productsDropdown">
+                                <li><a class="dropdown-item" href="#">Product #1</a></li>
+                                <li><a class="dropdown-item" href="#">Product #2</a></li>
+                                <li><a class="dropdown-item" href="#">Product #3</a></li>
+                            </ul>
+                        </li>
+
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle p-0" href="#" id="applicationsDropdown" role="button"
+                               data-bs-toggle="dropdown" aria-expanded="false">
+                                Applications
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="applicationsDropdown">
+                                <li><a class="dropdown-item" href="#">Application #1</a></li>
+                                <li><a class="dropdown-item" href="#">Application #2</a></li>
+                                <li><a class="dropdown-item" href="#">Application #3</a></li>
+                            </ul>
+                        </li>
+
+
+                        <li class="nav-item">
+                            <a class="nav-link p-0" href="#">Documentation</a>
+                        </li>
+
+                    </ul>
+
+
+                    <div class="d-flex header__auth">
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#registerModal">
+                            <i class="bi bi-person"></i>
+                        </a>
+
+                        <a data-bs-toggle="offcanvas" href="#cartSection" role="button"
+                           aria-controls="offcanvasExample">
+                            <i class="bi bi-cart3"></i>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
+
+
+<!-- Modal Search -->
+<div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="searchModalLabel">Search product</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Register -->
+<div class="modal fade" id="registerModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+     aria-labelledby="registerModalLabel" aria-hidden="true">
+    <div class="modal-dialog  modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="registerModalLabel">Modal title</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label for="emailInput" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="emailInput" placeholder="name@example.com">
+                </div>
+
+                <div class="mb-3">
+                    <label for="passwordInput" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="passwordInput" placeholder="Password">
+                </div>
+                <div class="mb-3">
+                    <label for="repeatPasswordInput" class="form-label">Repeat password</label>
+                    <input type="password" class="form-control" id="repeatPasswordInput" placeholder="Repeat password">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Cart section -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="cartSection" aria-labelledby="cartSectionLabel">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="cartSectionLabel">Cart</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <div>
+            Your cart is empty
+        </div>
+    </div>
+</div>
+<main>
+    <section class="display">
+        <div class="container">
+            <div class="display__text  d-flex">
+                <p class="display__text-p">Products</p>
+                <hr class="display__text-hr d-flex align-items-center">
+                <p class="display__text-p">Display Wall</p>
+                <hr class="display__text-hr d-flex align-items-center">
+                <p class="display__text-p">Products</p>
+            </div>
+            <h1 class="display__heading">
+                Display Wall
+            </h1>
+            <div class="display__panel d-flex">
+                <div class="row">
+                    <div class="col-3 display__col-3">
+                        <select class="form-select form-select-lg mb-3 display__panel-select"
+                                aria-label=".form-select-lg example">
+                            <option selected>Display Wall</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+
+                        <div class="display__panel-sidebar">
+                            <div class="option__container">
+                                <div class="display__panel-sidebar-text d-flex">
+
+                                    <p class="display__panel-sidebar-text-p">23 Results</p>
+
+
+                                    <a class="display__panel-sidebar-text-a" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+                                        <i class="bi bi-x-circle i-sidebar"></i>
+                                        Clear all filters
+                                    </a>
+                                </div>
+                                <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+                                    <div class="offcanvas-header">
+                                        <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                    </div>
+                                    <div class="offcanvas-body">
+                                        <div>
+
+                                                    <div class="accordion accord2 accordion-flush" id="accordionFlushExample2">
+                                                        <div class="accordion-item">
+                                                            <div class="accordion-header" id="flush-heading9">
+                                                                <div class="accordion-button collapsed"  data-bs-toggle="collapse" data-bs-target="#flush-collapse9" aria-expanded="false" aria-controls="flush-collapse9">
+                                                                    <h2 class="display__panel-sidebar-option-heading">Subcategory
+                                                                    </h2>
+                                                                </div>
+                                                            </div>
+                                                            <div id="flush-collapse9" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample2">
+                                                                <div class="accordion-body">
+                                                                    <ul>
+                                                                        <li>
+                                                                            <div class="form-check d-flex">
+                                                                                <input class="form-check-input" type="checkbox" value=""
+                                                                                       id="flexCheckChecked-33" checked>
+                                                                                <label class="form-check-label" for="flexCheckChecked-33">
+                                                                                </label>
+                                                                                <p class="display__panel-sidebar-option-p">
+                                                                                    Xpressions <span>(8)</span>
+                                                                                </p>
+                                                                            </div>
+
+
+                                                                        </li>
+                                                                        <li>
+                                                                            <div class="form-check d-flex">
+                                                                                <input class="form-check-input" type="checkbox" value=""
+                                                                                       id="flexCheckChecked-34" checked>
+                                                                                <label class="form-check-label" for="flexCheckChecked-34">
+                                                                                </label>
+                                                                                <p class="display__panel-sidebar-option-p">
+                                                                                    Xtension <span>(8)</span>
+                                                                                </p>
+                                                                            </div>
+
+                                                                        </li>
+                                                                        <li>
+                                                                            <div class="form-check d-flex">
+                                                                                <input class="form-check-input" type="checkbox" value=""
+                                                                                       id="flexCheckChecked-35" checked>
+                                                                                <label class="form-check-label" for="flexCheckChecked-35">
+                                                                                </label>
+                                                                                <p class="display__panel-sidebar-option-p">
+                                                                                    Virage <span>(8)</span>
+                                                                                </p>
+                                                                            </div>
+                                                                        </li>
+                                                                        <li>
+                                                                            <div class="form-check d-flex">
+                                                                                <input class="form-check-input" type="checkbox" value=""
+                                                                                       id="flexCheckChecked-36" checked>
+                                                                                <label class="form-check-label" for="flexCheckChecked-36">
+                                                                                </label>
+                                                                                <p class="display__panel-sidebar-option-p">
+                                                                                    Contour <span>(4)</span>
+                                                                                </p>
+
+                                                                            </div>
+                                                                        </li>
+                                                                        <li>
+                                                                            <div class="form-check d-flex">
+                                                                                <input class="form-check-input" type="checkbox" value=""
+                                                                                       id="flexCheckChecked-37" checked>
+                                                                                <label class="form-check-label" for="flexCheckChecked-37">
+                                                                                </label>
+                                                                                <p class="display__panel-sidebar-option-p">
+                                                                                    Xperience <span>(4)</span>
+                                                                                </p>
+                                                                            </div>
+                                                                        </li>
+
+
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="accordion-item">
+                                                            <div class="accordion-header" id="flush-heading10">
+                                                                <div class="accordion-button collapsed"  data-bs-toggle="collapse" data-bs-target="#flush-collapse10" aria-expanded="false" aria-controls="flush-collapse10">
+                                                                    <h2 class="display__panel-sidebar-option-heading">Type
+                                                                    </h2>
+                                                                </div>
+                                                            </div>
+                                                            <div id="flush-collapse10" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample2">
+                                                                <ul>
+                                                                    <li>
+                                                                        <div class="form-check d-flex">
+                                                                            <input class="form-check-input" type="checkbox" value=""
+                                                                                   id="flexCheckChecked-38" checked>
+                                                                            <label class="form-check-label" for="flexCheckChecked-38">
+                                                                            </label>
+                                                                            <p class="display__panel-sidebar-option-p">
+                                                                                Pop-up <span>(8)</span>
+                                                                            </p>
+                                                                        </div>
+
+
+                                                                    </li>
+                                                                    <li>
+                                                                        <div class="form-check d-flex">
+                                                                            <input class="form-check-input" type="checkbox" value=""
+                                                                                   id="flexCheckChecked-39" checked>
+                                                                            <label class="form-check-label" for="flexCheckChecked-39">
+                                                                            </label>
+                                                                            <p class="display__panel-sidebar-option-p">
+                                                                                Tubar <span>(8)</span>
+                                                                            </p>
+                                                                        </div>
+
+                                                                    </li>
+                                                                    <li>
+                                                                        <div class="form-check d-flex">
+                                                                            <input class="form-check-input" type="checkbox" value=""
+                                                                                   id="flexCheckChecked-40" checked>
+                                                                            <label class="form-check-label" for="flexCheckChecked-40">
+                                                                            </label>
+                                                                            <p class="display__panel-sidebar-option-p">
+                                                                                Table top <span>(8)</span>
+                                                                            </p>
+                                                                        </div>
+                                                                    </li>
+
+
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                        <div class="accordion-item">
+                                                            <div class="accordion-header" id="flush-heading11">
+                                                                <div class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#flush-collapse11" aria-expanded="false" aria-controls="flush-collapse11">
+                                                                    <h2 class="display__panel-sidebar-option-heading">Features
+                                                                    </h2>
+                                                                </div>
+                                                            </div>
+                                                            <div id="flush-collapse11" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample2">
+                                                                <ul>
+                                                                    <li>
+                                                                        <div class="form-check d-flex">
+                                                                            <input class="form-check-input" type="checkbox" value=""
+                                                                                   id="flexCheckChecked-41" checked>
+                                                                            <label class="form-check-label" for="flexCheckChecked-41">
+                                                                            </label>
+                                                                            <p class="display__panel-sidebar-option-p">
+                                                                                Backlit <span>(7)</span>
+                                                                            </p>
+                                                                        </div>
+
+
+                                                                    </li>
+                                                                    <li>
+                                                                        <div class="form-check d-flex">
+                                                                            <input class="form-check-input" type="checkbox" value=""
+                                                                                   id="flexCheckChecked-42" checked>
+                                                                            <label class="form-check-label" for="flexCheckChecked-42">
+                                                                            </label>
+                                                                            <p class="display__panel-sidebar-option-p">
+                                                                                TV Mount <span>(8)</span>
+                                                                            </p>
+                                                                        </div>
+
+                                                                    </li>
+                                                                    <li>
+                                                                        <div class="form-check d-flex">
+                                                                            <input class="form-check-input" type="checkbox" value=""
+                                                                                   id="flexCheckChecked-43" checked>
+                                                                            <label class="form-check-label" for="flexCheckChecked-43">
+                                                                            </label>
+                                                                            <p class="display__panel-sidebar-option-p">
+                                                                                Shelving <span>(8)</span>
+                                                                            </p>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li>
+                                                                        <div class="form-check d-flex">
+                                                                            <input class="form-check-input" type="checkbox" value=""
+                                                                                   id="flexCheckChecked-44" checked>
+                                                                            <label class="form-check-label" for="flexCheckChecked-44">
+                                                                            </label>
+                                                                            <p class="display__panel-sidebar-option-p">
+                                                                                Arch <span>(8)</span>
+                                                                            </p>
+
+                                                                        </div>
+                                                                    </li>
+                                                                    <li>
+                                                                        <div class="form-check d-flex">
+                                                                            <input class="form-check-input" type="checkbox" value=""
+                                                                                   id="flexCheckChecked-45" checked>
+                                                                            <label class="form-check-label" for="flexCheckChecked-45">
+                                                                            </label>
+                                                                            <p class="display__panel-sidebar-option-p">
+                                                                                Double sided <span>(8)</span>
+                                                                            </p>
+                                                                        </div>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                        <div class="accordion-item">
+                                                            <div class="accordion-header" id="flush-heading12">
+                                                                <div class="accordion-button collapsed"  data-bs-toggle="collapse" data-bs-target="#flush-collapse12" aria-expanded="false" aria-controls="flush-collapse12">
+                                                                    <h2 class="display__panel-sidebar-option-heading">Width
+                                                                    </h2>
+                                                                </div>
+                                                            </div>
+                                                            <div id="flush-collapse12" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample2">
+                                                                <ul>
+                                                                    <li>
+                                                                        <div class="form-check d-flex">
+                                                                            <input class="form-check-input" type="checkbox" value=""
+                                                                                   id="flexCheckChecked-46" checked>
+                                                                            <label class="form-check-label" for="flexCheckChecked-46">
+                                                                            </label>
+                                                                            <p class="display__panel-sidebar-option-p">
+                                                                                2.5 <span>(7)</span>
+                                                                            </p>
+                                                                        </div>
+
+
+                                                                    </li>
+                                                                    <li>
+                                                                        <div class="form-check d-flex">
+                                                                            <input class="form-check-input" type="checkbox" value=""
+                                                                                   id="flexCheckChecked-47" checked>
+                                                                            <label class="form-check-label" for="flexCheckChecked-47">
+                                                                            </label>
+                                                                            <p class="display__panel-sidebar-option-p">
+                                                                                5 <span>(8)</span>
+                                                                            </p>
+                                                                        </div>
+
+                                                                    </li>
+                                                                    <li>
+                                                                        <div class="form-check d-flex">
+                                                                            <input class="form-check-input" type="checkbox" value=""
+                                                                                   id="flexCheckChecked-48" checked>
+                                                                            <label class="form-check-label" for="flexCheckChecked-48">
+                                                                            </label>
+                                                                            <p class="display__panel-sidebar-option-p">
+                                                                                8 <span>(8)</span>
+                                                                            </p>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li>
+                                                                        <div class="form-check d-flex">
+                                                                            <input class="form-check-input" type="checkbox" value=""
+                                                                                   id="flexCheckChecked-49" checked>
+                                                                            <label class="form-check-label" for="flexCheckChecked-49">
+                                                                            </label>
+                                                                            <p class="display__panel-sidebar-option-p">
+                                                                                10 <span>(8)</span>
+                                                                            </p>
+
+                                                                        </div>
+                                                                    </li>
+                                                                    <li>
+                                                                        <div class="form-check d-flex">
+                                                                            <input class="form-check-input" type="checkbox" value=""
+                                                                                   id="flexCheckChecked-50" checked>
+                                                                            <label class="form-check-label" for="flexCheckChecked-50">
+                                                                            </label>
+                                                                            <p class="display__panel-sidebar-option-p">
+                                                                                20 <span>(8)</span>
+                                                                            </p>
+                                                                        </div>
+                                                                    </li>
+
+
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                        <div class="accordion-item">
+                                                            <div class="accordion-header" id="flush-heading13">
+                                                                <div class="accordion-button collapsed"  data-bs-toggle="collapse" data-bs-target="#flush-collapse13" aria-expanded="false" aria-controls="flush-collapse13">
+                                                                    <h2 class="display__panel-sidebar-option-heading">Height
+                                                                    </h2>
+                                                                </div>
+                                                            </div>
+                                                            <div id="flush-collapse13" class="accordion-collapse collapse" aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample2"> <ul>
+                                                                <li>
+                                                                    <div class="form-check d-flex">
+                                                                        <input class="form-check-input" type="checkbox" value=""
+                                                                               id="flexCheckChecked-51" checked>
+                                                                        <label class="form-check-label" for="flexCheckChecked-51">
+                                                                        </label>
+                                                                        <p class="display__panel-sidebar-option-p">
+                                                                            4 <span>(7)</span>
+                                                                        </p>
+                                                                    </div>
+
+
+                                                                </li>
+                                                                <li>
+                                                                    <div class="form-check d-flex">
+                                                                        <input class="form-check-input" type="checkbox" value=""
+                                                                               id="flexCheckChecked-52" checked>
+                                                                        <label class="form-check-label" for="flexCheckChecked-52">
+                                                                        </label>
+                                                                        <p class="display__panel-sidebar-option-p">
+                                                                            8 <span>(8)</span>
+                                                                        </p>
+                                                                    </div>
+
+                                                                </li>
+                                                                <li>
+                                                                    <div class="form-check d-flex">
+                                                                        <input class="form-check-input" type="checkbox" value=""
+                                                                               id="flexCheckChecked-53" checked>
+                                                                        <label class="form-check-label" for="flexCheckChecked-53">
+                                                                        </label>
+                                                                        <p class="display__panel-sidebar-option-p">
+                                                                            10 <span>(8)</span>
+                                                                        </p>
+                                                                    </div>
+                                                                </li>
+
+
+                                                            </ul>
+                                                            </div>
+                                                        </div>
+                                                        <div class="accordion-item">
+                                                            <div class="accordion-header" id="flush-heading14">
+                                                                <div class="accordion-button collapsed"  data-bs-toggle="collapse" data-bs-target="#flush-collapse14" aria-expanded="false" aria-controls="flush-collapse14">
+                                                                    <h2 class="display__panel-sidebar-option-heading">Form
+                                                                    </h2>
+                                                                </div>
+                                                            </div>
+                                                            <div id="flush-collapse14" class="accordion-collapse collapse" aria-labelledby="flush-headingSix" data-bs-parent="#accordionFlushExample2">
+                                                                <ul>
+                                                                    <li>
+                                                                        <div class="form-check d-flex">
+                                                                            <input class="form-check-input" type="checkbox" value=""
+                                                                                   id="flexCheckChecked-54" checked>
+                                                                            <label class="form-check-label" for="flexCheckChecked-54">
+                                                                            </label>
+                                                                            <p class="display__panel-sidebar-option-p">
+                                                                                Straight <span>(7)</span>
+                                                                            </p>
+                                                                        </div>
+
+
+                                                                    </li>
+                                                                    <li>
+                                                                        <div class="form-check d-flex">
+                                                                            <input class="form-check-input" type="checkbox" value=""
+                                                                                   id="flexCheckChecked-55" checked>
+                                                                            <label class="form-check-label" for="flexCheckChecked-55">
+                                                                            </label>
+                                                                            <p class="display__panel-sidebar-option-p">
+                                                                                Curved <span>(8)</span>
+                                                                            </p>
+                                                                        </div>
+
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                        <div class="accordion-item">
+                                                            <div class="accordion-header" id="flush-heading15">
+                                                                <div class="accordion-button collapsed"  data-bs-toggle="collapse" data-bs-target="#flush-collapse15" aria-expanded="false" aria-controls="flush-collapse15">
+                                                                    <h2 class="display__panel-sidebar-option-heading">Price Range
+                                                                    </h2>
+                                                                </div>
+                                                            </div>
+                                                            <div id="flush-collapse15" class="accordion-collapse collapse" aria-labelledby="flush-headingSeven" data-bs-parent="#accordionFlushExample2">
+                                                                <ul>
+                                                                    <li>
+                                                                        <div class="form-check d-flex">
+                                                                            <input class="form-check-input" type="checkbox" value=""
+                                                                                   id="flexCheckChecked-56" checked>
+                                                                            <label class="form-check-label" for="flexCheckChecked-56">
+                                                                            </label>
+                                                                            <p class="display__panel-sidebar-option-p">
+                                                                                550-699 <span>(27)</span>
+                                                                            </p>
+                                                                        </div>
+
+
+                                                                    </li>
+                                                                    <li>
+                                                                        <div class="form-check d-flex">
+                                                                            <input class="form-check-input" type="checkbox" value=""
+                                                                                   id="flexCheckChecked-57" checked>
+                                                                            <label class="form-check-label" for="flexCheckChecked-57">
+                                                                            </label>
+                                                                            <p class="display__panel-sidebar-option-p">
+                                                                                700-999 <span>(38)</span>
+                                                                            </p>
+                                                                        </div>
+
+                                                                    </li>
+                                                                    <li>
+                                                                        <div class="form-check d-flex">
+                                                                            <input class="form-check-input" type="checkbox" value=""
+                                                                                   id="flexCheckChecked-58" checked>
+                                                                            <label class="form-check-label" for="flexCheckChecked-58">
+                                                                            </label>
+                                                                            <p class="display__panel-sidebar-option-p">
+                                                                                1000-1999 <span>(48)</span>
+                                                                            </p>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li>
+                                                                        <div class="form-check d-flex">
+                                                                            <input class="form-check-input" type="checkbox" value=""
+                                                                                   id="flexCheckChecked-59" checked>
+                                                                            <label class="form-check-label" for="flexCheckChecked-59">
+                                                                            </label>
+                                                                            <p class="display__panel-sidebar-option-p">
+                                                                                2000-3999 <span>(8)</span>
+                                                                            </p>
+
+                                                                        </div>
+                                                                    </li>
+                                                                    <li>
+                                                                        <div class="form-check d-flex">
+                                                                            <input class="form-check-input" type="checkbox" value=""
+                                                                                   id="flexCheckChecked-60" checked>
+                                                                            <label class="form-check-label" for="flexCheckChecked-60">
+                                                                            </label>
+                                                                            <p class="display__panel-sidebar-option-p">
+                                                                                4000+ <span>(8)</span>
+                                                                            </p>
+                                                                        </div>
+                                                                    </li>
+
+
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                        <div class="accordion-item">
+                                                            <div class="accordion-header" id="flush-heading16">
+                                                                <div class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#flush-collapse16" aria-expanded="false" aria-controls="flush-collapse16">
+                                                                    <h2 class="display__panel-sidebar-option-heading">Set-up Time
+                                                                    </h2>
+                                                                </div>
+                                                            </div>
+                                                            <div id="flush-collapse16" class="accordion-collapse collapse" aria-labelledby="flush-headingEight" data-bs-parent="#accordionFlushExample2"> <ul>
+                                                                <li>
+                                                                    <div class="form-check d-flex">
+                                                                        <input class="form-check-input" type="checkbox" value=""
+                                                                               id="flexCheckChecked-61" checked>
+                                                                        <label class="form-check-label" for="flexCheckChecked-61">
+                                                                        </label>
+                                                                        <p class="display__panel-sidebar-option-p">
+                                                                            1+ (Fast) <span>(27)</span>
+                                                                        </p>
+                                                                    </div>
+
+
+                                                                </li>
+                                                                <li>
+                                                                    <div class="form-check d-flex">
+                                                                        <input class="form-check-input" type="checkbox" value=""
+                                                                               id="flexCheckChecked-62" checked>
+                                                                        <label class="form-check-label" for="flexCheckChecked-62">
+                                                                        </label>
+
+                                                                        <p class="display__panel-sidebar-option-p">5+ (Easy) <span>(38)</span></p>
+                                                                    </div>
+
+                                                                </li>
+                                                                <li>
+                                                                    <div class="form-check d-flex">
+                                                                        <input class="form-check-input" type="checkbox" value=""
+                                                                               id="flexCheckChecked-63" checked>
+                                                                        <label class="form-check-label" for="flexCheckChecked-63">
+                                                                        </label>
+                                                                        <p class="display__panel-sidebar-option-p">
+                                                                            10+ (Average) <span>(48)</span>
+                                                                        </p>
+                                                                    </div>
+                                                                </li>
+                                                                <li>
+                                                                    <div class="form-check d-flex">
+                                                                        <input class="form-check-input" type="checkbox" value=""
+                                                                               id="flexCheckChecked-64" checked>
+                                                                        <label class="form-check-label" for="flexCheckChecked-64">
+                                                                        </label>
+                                                                        <p class="display__panel-sidebar-option-p">
+                                                                            20+ (Expert) <span>(8)</span>
+                                                                        </p>
+
+                                                                    </div>
+                                                                </li>
+
+
+                                                            </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="accordion accord1 accordion-flush" id="accordionFlushExample">
+                                    <div class="accordion-item">
+                                        <div class="accordion-header" id="flush-headingOne">
+                                            <div class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                                <h2 class="display__panel-sidebar-option-heading">Subcategory
+                                                </h2>
+                                            </div>
+                                        </div>
+                                        <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                            <div class="accordion-body">
+                                                <ul>
+                                                <li>
+                                                    <div class="form-check d-flex">
+                                                        <input class="form-check-input" type="checkbox" value=""
+                                                               id="flexCheckChecked" checked>
+                                                        <label class="form-check-label" for="flexCheckChecked">
+                                                        </label>
+                                                        <p class="display__panel-sidebar-option-p">
+                                                            Xpressions <span>(8)</span>
+                                                        </p>
+                                                    </div>
+
+
+                                                </li>
+                                                <li>
+                                                    <div class="form-check d-flex">
+                                                        <input class="form-check-input" type="checkbox" value=""
+                                                               id="flexCheckChecked-2" checked>
+                                                        <label class="form-check-label" for="flexCheckChecked-2">
+                                                        </label>
+                                                        <p class="display__panel-sidebar-option-p">
+                                                            Xtension <span>(8)</span>
+                                                        </p>
+                                                    </div>
+
+                                                </li>
+                                                <li>
+                                                    <div class="form-check d-flex">
+                                                        <input class="form-check-input" type="checkbox" value=""
+                                                               id="flexCheckChecked-3" checked>
+                                                        <label class="form-check-label" for="flexCheckChecked-3">
+                                                        </label>
+                                                        <p class="display__panel-sidebar-option-p">
+                                                            Virage <span>(8)</span>
+                                                        </p>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="form-check d-flex">
+                                                        <input class="form-check-input" type="checkbox" value=""
+                                                               id="flexCheckChecked-4" checked>
+                                                        <label class="form-check-label" for="flexCheckChecked-4">
+                                                        </label>
+                                                        <p class="display__panel-sidebar-option-p">
+                                                            Contour <span>(4)</span>
+                                                        </p>
+
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="form-check d-flex">
+                                                        <input class="form-check-input" type="checkbox" value=""
+                                                               id="flexCheckChecked-5" checked>
+                                                        <label class="form-check-label" for="flexCheckChecked-5">
+                                                        </label>
+                                                        <p class="display__panel-sidebar-option-p">
+                                                            Xperience <span>(4)</span>
+                                                        </p>
+                                                    </div>
+                                                </li>
+
+
+                                            </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <div class="accordion-header" id="flush-headingTwo">
+                                            <div class="accordion-button collapsed"  data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                                                <h2 class="display__panel-sidebar-option-heading">Type
+                                                </h2>
+                                            </div>
+                                        </div>
+                                        <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                                            <ul>
+                                                <li>
+                                                    <div class="form-check d-flex">
+                                                        <input class="form-check-input" type="checkbox" value=""
+                                                               id="flexCheckChecked-6" checked>
+                                                        <label class="form-check-label" for="flexCheckChecked-6">
+                                                        </label>
+                                                        <p class="display__panel-sidebar-option-p">
+                                                            Pop-up <span>(8)</span>
+                                                        </p>
+                                                    </div>
+
+
+                                                </li>
+                                                <li>
+                                                    <div class="form-check d-flex">
+                                                        <input class="form-check-input" type="checkbox" value=""
+                                                               id="flexCheckChecked-7" checked>
+                                                        <label class="form-check-label" for="flexCheckChecked-7">
+                                                        </label>
+                                                        <p class="display__panel-sidebar-option-p">
+                                                            Tubar <span>(8)</span>
+                                                        </p>
+                                                    </div>
+
+                                                </li>
+                                                <li>
+                                                    <div class="form-check d-flex">
+                                                        <input class="form-check-input" type="checkbox" value=""
+                                                               id="flexCheckChecked-8" checked>
+                                                        <label class="form-check-label" for="flexCheckChecked-8">
+                                                        </label>
+                                                        <p class="display__panel-sidebar-option-p">
+                                                            Table top <span>(8)</span>
+                                                        </p>
+                                                    </div>
+                                                </li>
+
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <div class="accordion-header" id="flush-headingThree">
+                                            <div class="accordion-button collapsed"  data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                                                <h2 class="display__panel-sidebar-option-heading">Features
+                                                </h2>
+                                            </div>
+                                        </div>
+                                        <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                                            <ul>
+                                                <li>
+                                                    <div class="form-check d-flex">
+                                                        <input class="form-check-input" type="checkbox" value=""
+                                                               id="flexCheckChecked-9" checked>
+                                                        <label class="form-check-label" for="flexCheckChecked-9">
+                                                        </label>
+                                                        <p class="display__panel-sidebar-option-p">
+                                                            Backlit <span>(7)</span>
+                                                        </p>
+                                                    </div>
+
+
+                                                </li>
+                                                <li>
+                                                    <div class="form-check d-flex">
+                                                        <input class="form-check-input" type="checkbox" value=""
+                                                               id="flexCheckChecked-10" checked>
+                                                        <label class="form-check-label" for="flexCheckChecked-10">
+                                                        </label>
+                                                        <p class="display__panel-sidebar-option-p">
+                                                            TV Mount <span>(8)</span>
+                                                        </p>
+                                                    </div>
+
+                                                </li>
+                                                <li>
+                                                    <div class="form-check d-flex">
+                                                        <input class="form-check-input" type="checkbox" value=""
+                                                               id="flexCheckChecked-11" checked>
+                                                        <label class="form-check-label" for="flexCheckChecked-11">
+                                                        </label>
+                                                        <p class="display__panel-sidebar-option-p">
+                                                            Shelving <span>(8)</span>
+                                                        </p>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="form-check d-flex">
+                                                        <input class="form-check-input" type="checkbox" value=""
+                                                               id="flexCheckChecked-12" checked>
+                                                        <label class="form-check-label" for="flexCheckChecked-12">
+                                                        </label>
+                                                        <p class="display__panel-sidebar-option-p">
+                                                            Arch <span>(8)</span>
+                                                        </p>
+
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="form-check d-flex">
+                                                        <input class="form-check-input" type="checkbox" value=""
+                                                               id="flexCheckChecked-13" checked>
+                                                        <label class="form-check-label" for="flexCheckChecked-13">
+                                                        </label>
+                                                        <p class="display__panel-sidebar-option-p">
+                                                            Double sided <span>(8)</span>
+                                                        </p>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <div class="accordion-header" id="flush-headingFour">
+                                            <div class="accordion-button collapsed"  data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseThree">
+                                                <h2 class="display__panel-sidebar-option-heading">Width
+                                                </h2>
+                                            </div>
+                                        </div>
+                                        <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
+                                            <ul>
+                                                <li>
+                                                    <div class="form-check d-flex">
+                                                        <input class="form-check-input" type="checkbox" value=""
+                                                               id="flexCheckChecked-14" checked>
+                                                        <label class="form-check-label" for="flexCheckChecked-14">
+                                                        </label>
+                                                        <p class="display__panel-sidebar-option-p">
+                                                            2.5 <span>(7)</span>
+                                                        </p>
+                                                    </div>
+
+
+                                                </li>
+                                                <li>
+                                                    <div class="form-check d-flex">
+                                                        <input class="form-check-input" type="checkbox" value=""
+                                                               id="flexCheckChecked-15" checked>
+                                                        <label class="form-check-label" for="flexCheckChecked-15">
+                                                        </label>
+                                                        <p class="display__panel-sidebar-option-p">
+                                                            5 <span>(8)</span>
+                                                        </p>
+                                                    </div>
+
+                                                </li>
+                                                <li>
+                                                    <div class="form-check d-flex">
+                                                        <input class="form-check-input" type="checkbox" value=""
+                                                               id="flexCheckChecked-16" checked>
+                                                        <label class="form-check-label" for="flexCheckChecked-16">
+                                                        </label>
+                                                        <p class="display__panel-sidebar-option-p">
+                                                            8 <span>(8)</span>
+                                                        </p>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="form-check d-flex">
+                                                        <input class="form-check-input" type="checkbox" value=""
+                                                               id="flexCheckChecked-17" checked>
+                                                        <label class="form-check-label" for="flexCheckChecked-17">
+                                                        </label>
+                                                        <p class="display__panel-sidebar-option-p">
+                                                            10 <span>(8)</span>
+                                                        </p>
+
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="form-check d-flex">
+                                                        <input class="form-check-input" type="checkbox" value=""
+                                                               id="flexCheckChecked-18" checked>
+                                                        <label class="form-check-label" for="flexCheckChecked-18">
+                                                        </label>
+                                                        <p class="display__panel-sidebar-option-p">
+                                                            20 <span>(8)</span>
+                                                        </p>
+                                                    </div>
+                                                </li>
+
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <div class="accordion-header" id="flush-headingFive">
+                                            <div class="accordion-button collapsed"  data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseThree">
+                                                <h2 class="display__panel-sidebar-option-heading">Height
+                                                </h2>
+                                            </div>
+                                        </div>
+                                        <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample"> <ul>
+                                            <li>
+                                                <div class="form-check d-flex">
+                                                    <input class="form-check-input" type="checkbox" value=""
+                                                           id="flexCheckChecked-19" checked>
+                                                    <label class="form-check-label" for="flexCheckChecked-19">
+                                                    </label>
+                                                    <p class="display__panel-sidebar-option-p">
+                                                        4 <span>(7)</span>
+                                                    </p>
+                                                </div>
+
+
+                                            </li>
+                                            <li>
+                                                <div class="form-check d-flex">
+                                                    <input class="form-check-input" type="checkbox" value=""
+                                                           id="flexCheckChecked-20" checked>
+                                                    <label class="form-check-label" for="flexCheckChecked-20">
+                                                    </label>
+                                                    <p class="display__panel-sidebar-option-p">
+                                                        8 <span>(8)</span>
+                                                    </p>
+                                                </div>
+
+                                            </li>
+                                            <li>
+                                                <div class="form-check d-flex">
+                                                    <input class="form-check-input" type="checkbox" value=""
+                                                           id="flexCheckChecked-21" checked>
+                                                    <label class="form-check-label" for="flexCheckChecked-21">
+                                                    </label>
+                                                    <p class="display__panel-sidebar-option-p">
+                                                        10 <span>(8)</span>
+                                                    </p>
+                                                </div>
+                                            </li>
+
+
+                                        </ul>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <div class="accordion-header" id="flush-headingSix">
+                                            <div class="accordion-button collapsed"  data-bs-toggle="collapse" data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseThree">
+                                                <h2 class="display__panel-sidebar-option-heading">Form
+                                                </h2>
+                                            </div>
+                                        </div>
+                                        <div id="flush-collapseSix" class="accordion-collapse collapse" aria-labelledby="flush-headingSix" data-bs-parent="#accordionFlushExample">
+                                            <ul>
+                                                <li>
+                                                    <div class="form-check d-flex">
+                                                        <input class="form-check-input" type="checkbox" value=""
+                                                               id="flexCheckChecked-22" checked>
+                                                        <label class="form-check-label" for="flexCheckChecked-22">
+                                                        </label>
+                                                        <p class="display__panel-sidebar-option-p">
+                                                            Straight <span>(7)</span>
+                                                        </p>
+                                                    </div>
+
+
+                                                </li>
+                                                <li>
+                                                    <div class="form-check d-flex">
+                                                        <input class="form-check-input" type="checkbox" value=""
+                                                               id="flexCheckChecked-23" checked>
+                                                        <label class="form-check-label" for="flexCheckChecked-23">
+                                                        </label>
+                                                        <p class="display__panel-sidebar-option-p">
+                                                            Curved <span>(8)</span>
+                                                        </p>
+                                                    </div>
+
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <div class="accordion-header" id="flush-headingSeven">
+                                            <div class="accordion-button collapsed"  data-bs-toggle="collapse" data-bs-target="#flush-collapseSeven" aria-expanded="false" aria-controls="flush-collapseThree">
+                                                <h2 class="display__panel-sidebar-option-heading">Price Range
+                                                </h2>
+                                            </div>
+                                        </div>
+                                        <div id="flush-collapseSeven" class="accordion-collapse collapse" aria-labelledby="flush-headingSeven" data-bs-parent="#accordionFlushExample">
+                                            <ul>
+                                                <li>
+                                                    <div class="form-check d-flex">
+                                                        <input class="form-check-input" type="checkbox" value=""
+                                                               id="flexCheckChecked-24" checked>
+                                                        <label class="form-check-label" for="flexCheckChecked-24">
+                                                        </label>
+                                                        <p class="display__panel-sidebar-option-p">
+                                                            550-699 <span>(27)</span>
+                                                        </p>
+                                                    </div>
+
+
+                                                </li>
+                                                <li>
+                                                    <div class="form-check d-flex">
+                                                        <input class="form-check-input" type="checkbox" value=""
+                                                               id="flexCheckChecked-25" checked>
+                                                        <label class="form-check-label" for="flexCheckChecked-25">
+                                                        </label>
+                                                        <p class="display__panel-sidebar-option-p">
+                                                            700-999 <span>(38)</span>
+                                                        </p>
+                                                    </div>
+
+                                                </li>
+                                                <li>
+                                                    <div class="form-check d-flex">
+                                                        <input class="form-check-input" type="checkbox" value=""
+                                                               id="flexCheckChecked-26" checked>
+                                                        <label class="form-check-label" for="flexCheckChecked-26">
+                                                        </label>
+                                                        <p class="display__panel-sidebar-option-p">
+                                                            1000-1999 <span>(48)</span>
+                                                        </p>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="form-check d-flex">
+                                                        <input class="form-check-input" type="checkbox" value=""
+                                                               id="flexCheckChecked-27" checked>
+                                                        <label class="form-check-label" for="flexCheckChecked-27">
+                                                        </label>
+                                                        <p class="display__panel-sidebar-option-p">
+                                                            2000-3999 <span>(8)</span>
+                                                        </p>
+
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="form-check d-flex">
+                                                        <input class="form-check-input" type="checkbox" value=""
+                                                               id="flexCheckChecked-28" checked>
+                                                        <label class="form-check-label" for="flexCheckChecked-28">
+                                                        </label>
+                                                        <p class="display__panel-sidebar-option-p">
+                                                            4000+ <span>(8)</span>
+                                                        </p>
+                                                    </div>
+                                                </li>
+
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <div class="accordion-header" id="flush-headingEight">
+                                            <div class="accordion-button collapsed"  data-bs-toggle="collapse" data-bs-target="#flush-collapseEight" aria-expanded="false" aria-controls="flush-collapseThree">
+                                                <h2 class="display__panel-sidebar-option-heading">Set-up Time
+                                                </h2>
+                                            </div>
+                                        </div>
+                                        <div id="flush-collapseEight" class="accordion-collapse collapse" aria-labelledby="flush-headingEight" data-bs-parent="#accordionFlushExample"> <ul>
+                                            <li>
+                                                <div class="form-check d-flex">
+                                                    <input class="form-check-input" type="checkbox" value=""
+                                                           id="flexCheckChecked-29" checked>
+                                                    <label class="form-check-label" for="flexCheckChecked-29">
+                                                    </label>
+                                                    <p class="display__panel-sidebar-option-p">
+                                                        1+ (Fast) <span>(27)</span>
+                                                    </p>
+                                                </div>
+
+
+                                            </li>
+                                            <li>
+                                                <div class="form-check d-flex">
+                                                    <input class="form-check-input" type="checkbox" value=""
+                                                           id="flexCheckChecked-30" checked>
+                                                    <label class="form-check-label" for="flexCheckChecked-30">
+                                                    </label>
+
+                                                    <p class="display__panel-sidebar-option-p">5+ (Easy) <span>(38)</span></p>
+                                                </div>
+
+                                            </li>
+                                            <li>
+                                                <div class="form-check d-flex">
+                                                    <input class="form-check-input" type="checkbox" value=""
+                                                           id="flexCheckChecked-31" checked>
+                                                    <label class="form-check-label" for="flexCheckChecked-31">
+                                                    </label>
+                                                    <p class="display__panel-sidebar-option-p">
+                                                        10+ (Average) <span>(48)</span>
+                                                    </p>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="form-check d-flex">
+                                                    <input class="form-check-input" type="checkbox" value=""
+                                                           id="flexCheckChecked-32" checked>
+                                                    <label class="form-check-label" for="flexCheckChecked-32">
+                                                    </label>
+                                                    <p class="display__panel-sidebar-option-p">
+                                                        20+ (Expert) <span>(8)</span>
+                                                    </p>
+
+                                                </div>
+                                            </li>
+
+
+                                        </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <div class="col-9">
+                        <form class="d-flex display__panel-form" role="search">
+                            <input class="form-control display__panel-search me-2 b-0" type="search"
+                                   placeholder="Search" aria-label="Search">
+                            <a href="#"><i class="bi bi-search i-search"></i></a>
+                        </form>
+                        <div class="row">
+                            <div class="col-4">
+                                <a href="#">
+                                    <div class="display__card">
+                                      <span>
+                                          <img class="display__card-tag" src="../assets/card-tag1.svg" alt="firstTag">
+                                      </span>
+                                        <div class="display__card-images d-flex">
+                                            <img class="display__card-image" src="../assets/card-img1.svg"
+                                                 alt="firstProduct">
+                                            <img class="display__card-image" src="../assets/card-img1.svg"
+                                                 alt="firstProduct">
+                                        </div>
+
+                                        <div class="display__card-text">
+                                            <h3 class="display__card-text--heading">Contour 10x4</h3>
+                                            <p class="display__card-text-p">8123,99 €</p>
+                                        </div>
+
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-4">
+                                <a href="#">
+                                    <div class="display__card">
+                                      <span>
+                                          <img class="display__card-tag2" src="../assets/card-tag2.svg" alt="firstTag">
+                                          <img class="display__card-tag3" src="../assets/card-tag3.svg" alt="firstTag">
+                                      </span>
+                                        <div class="display__card-images d-flex">
+                                            <img class="display__card-image" src="../assets/card-img2.svg"
+                                                 alt="firstProduct">
+                                            <img class="display__card-image" src="../assets/card-img2.svg"
+                                                 alt="firstProduct">
+                                        </div>
+
+                                        <div class="display__card-text">
+                                            <h3 class="display__card-text--heading">Contour 10x4</h3>
+                                            <p class="display__card-text-p">8123,99 €</p>
+                                        </div>
+
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-4">
+                                <a href="#">
+                                    <div class="display__card">
+                                        <div class="display__card-images d-flex">
+                                            <img class="display__card-image" src="../assets/card-img3.svg"
+                                                 alt="firstProduct">
+                                            <img class="display__card-image" src="../assets/card-img3.svg"
+                                                 alt="firstProduct">
+                                        </div>
+
+                                        <div class="display__card-text">
+                                            <h3 class="display__card-text--heading">Contour 10x4</h3>
+                                            <p class="display__card-text-p">8123,99 €</p>
+                                        </div>
+
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-4">
+                                <a href="#">
+                                    <div class="display__card">
+                                      <span>
+                                          <img class="display__card-tag2" src="../assets/card-tag2.svg" alt="firstTag">
+                                      </span>
+                                        <div class="display__card-images d-flex">
+                                            <img class="display__card-image" src="../assets/card-img1.svg"
+                                                 alt="firstProduct">
+                                            <img class="display__card-image" src="../assets/card-img1.svg"
+                                                 alt="firstProduct">
+                                        </div>
+
+                                        <div class="display__card-text">
+                                            <h3 class="display__card-text--heading">Contour 10x4</h3>
+                                            <p class="display__card-text-p">8123,99 €</p>
+                                        </div>
+
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-4">
+                                <a href="#">
+                                    <div class="display__card">
+
+                                        <div class="display__card-images d-flex">
+                                            <img class="display__card-image" src="../assets/card-img1.svg"
+                                                 alt="firstProduct">
+                                            <img class="display__card-image" src="../assets/card-img1.svg"
+                                                 alt="firstProduct">
+                                        </div>
+
+                                        <div class="display__card-text">
+                                            <h3 class="display__card-text--heading">Contour 10x4</h3>
+                                            <p class="display__card-text-p">8123,99 €</p>
+                                        </div>
+
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-4">
+                                <a href="#">
+                                    <div class="display__card">
+                                      <span>
+                                          <img class="display__card-tag" src="../assets/card-tag1.svg" alt="firstTag">
+                                      </span>
+                                        <div class="display__card-images d-flex">
+                                            <img class="display__card-image" src="../assets/card-img3.svg"
+                                                 alt="firstProduct">
+                                            <img class="display__card-image" src="../assets/card-img3.svg"
+                                                 alt="firstProduct">
+                                        </div>
+
+                                        <div class="display__card-text">
+                                            <h3 class="display__card-text--heading">Contour 10x4</h3>
+                                            <p class="display__card-text-p">8123,99 €</p>
+                                        </div>
+
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-4">
+                                <a href="#">
+                                    <div class="display__card">
+                                      <span>
+                                          <img class="display__card-tag" src="../assets/card-tag1.svg" alt="firstTag">
+                                      </span>
+                                        <div class="display__card-images d-flex">
+                                            <img class="display__card-image" src="../assets/card-img1.svg"
+                                                 alt="firstProduct">
+                                            <img class="display__card-image" src="../assets/card-img1.svg"
+                                                 alt="firstProduct">
+                                        </div>
+
+                                        <div class="display__card-text">
+                                            <h3 class="display__card-text--heading">Contour 10x4</h3>
+                                            <p class="display__card-text-p">8123,99 €</p>
+                                        </div>
+
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-4">
+                                <a href="#">
+                                    <div class="display__card">
+                                       <span>
+                                          <img class="display__card-tag2" src="../assets/card-tag2.svg" alt="firstTag">
+                                          <img class="display__card-tag3" src="../assets/card-tag3.svg" alt="firstTag">
+                                      </span>
+                                        <div class="display__card-images d-flex">
+                                            <img class="display__card-image" src="../assets/card-img2.svg"
+                                                 alt="firstProduct">
+                                            <img class="display__card-image" src="../assets/card-img2.svg"
+                                                 alt="firstProduct">
+                                        </div>
+
+                                        <div class="display__card-text">
+                                            <h3 class="display__card-text--heading">Contour 10x4</h3>
+                                            <p class="display__card-text-p">8123,99 €</p>
+                                        </div>
+
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-4">
+                                <a href="#">
+                                    <div class="display__card">
+                                        <div class="display__card-images d-flex">
+                                            <img class="display__card-image" src="../assets/card-img3.svg"
+                                                 alt="firstProduct">
+                                            <img class="display__card-image" src="../assets/card-img3.svg"
+                                                 alt="firstProduct">
+                                        </div>
+
+                                        <div class="display__card-text">
+                                            <h3 class="display__card-text--heading">Contour 10x4</h3>
+                                            <p class="display__card-text-p">8123,99 €</p>
+                                        </div>
+
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-4">
+                                <a href="#">
+                                    <div class="display__card">
+                                      <span>
+                                          <img class="display__card-tag" src="../assets/card-tag1.svg" alt="firstTag">
+                                      </span>
+                                        <div class="display__card-images d-flex">
+                                            <img class="display__card-image" src="../assets/card-img1.svg"
+                                                 alt="firstProduct">
+                                            <img class="display__card-image" src="../assets/card-img1.svg"
+                                                 alt="firstProduct">
+                                        </div>
+
+                                        <div class="display__card-text">
+                                            <h3 class="display__card-text--heading">Contour 10x4</h3>
+                                            <p class="display__card-text-p">8123,99 €</p>
+                                        </div>
+
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-4">
+                                <a href="#">
+                                    <div class="display__card">
+                                       <span>
+                                          <img class="display__card-tag2" src="../assets/card-tag2.svg" alt="firstTag">
+                                          <img class="display__card-tag3" src="../assets/card-tag3.svg" alt="firstTag">
+                                      </span>
+                                        <div class="display__card-images d-flex">
+                                            <img class="display__card-image" src="../assets/card-img2.svg"
+                                                 alt="firstProduct">
+                                            <img class="display__card-image" src="../assets/card-img2.svg"
+                                                 alt="firstProduct">
+                                        </div>
+
+                                        <div class="display__card-text">
+                                            <h3 class="display__card-text--heading">Contour 10x4</h3>
+                                            <p class="display__card-text-p">8123,99 €</p>
+                                        </div>
+
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-4">
+                                <a href="#">
+                                    <div class="display__card">
+                                        <div class="display__card-images d-flex">
+                                            <img class="display__card-image" src="../assets/card-img3.svg"
+                                                 alt="firstProduct">
+                                            <img class="display__card-image" src="../assets/card-img3.svg"
+                                                 alt="firstProduct">
+                                        </div>
+
+                                        <div class="display__card-text">
+                                            <h3 class="display__card-text--heading">Contour 10x4</h3>
+                                            <p class="display__card-text-p">8123,99 €</p>
+                                        </div>
+
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-4">
+                                <a href="#">
+                                    <div class="display__card">
+                                      <span>
+                                          <img class="display__card-tag" src="../assets/card-tag1.svg" alt="firstTag">
+                                      </span>
+                                        <div class="display__card-images d-flex">
+                                            <img class="display__card-image" src="../assets/card-img1.svg"
+                                                 alt="firstProduct">
+                                            <img class="display__card-image" src="../assets/card-img1.svg"
+                                                 alt="firstProduct">
+                                        </div>
+
+                                        <div class="display__card-text">
+                                            <h3 class="display__card-text--heading">Contour 10x4</h3>
+                                            <p class="display__card-text-p">8123,99 €</p>
+                                        </div>
+
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-4">
+                                <a href="#">
+                                    <div class="display__card">
+                                       <span>
+                                          <img class="display__card-tag2" src="../assets/card-tag2.svg" alt="firstTag">
+                                          <img class="display__card-tag3" src="../assets/card-tag3.svg" alt="firstTag">
+                                      </span>
+                                        <div class="display__card-images d-flex">
+                                            <img class="display__card-image" src="../assets/card-img2.svg"
+                                                 alt="firstProduct">
+                                            <img class="display__card-image" src="../assets/card-img2.svg"
+                                                 alt="firstProduct">
+                                        </div>
+
+                                        <div class="display__card-text">
+                                            <h3 class="display__card-text--heading">Contour 10x4</h3>
+                                            <p class="display__card-text-p">8123,99 €</p>
+                                        </div>
+
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-4">
+                                <a href="#">
+                                    <div class="display__card">
+                                        <div class="display__card-images d-flex">
+                                            <img class="display__card-image" src="../assets/card-img3.svg"
+                                                 alt="firstProduct">
+                                            <img class="display__card-image" src="../assets/card-img3.svg"
+                                                 alt="firstProduct">
+                                        </div>
+
+                                        <div class="display__card-text">
+                                            <h3 class="display__card-text--heading">Contour 10x4</h3>
+                                            <p class="display__card-text-p">8123,99 €</p>
+                                        </div>
+
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row display__under-row">
+                            <div class="col-6 d-flex display__afterButtons align-items-center">
+                                <a href="#">
+                                    <div class="display__afterButton">
+                                        <img class="display__afterButtons-imgs" src="../assets/icn_arrow1.svg"
+                                             alt="arrow">
+                                    </div>
+                                </a>
+
+                                <p class="display__afterText">Page</p>
+                                <a href="#">
+
+                                    <div class="display__afterButton3 d-flex justify-content-center align-items-center">
+                                       <b>1</b>
+                                    </div>
+                                </a>
+                                <p class="display__afterText">of 128</p>
+                                <a href="#">
+                                    <div class="display__afterButton2">
+                                        <img class="display__afterButtons-imgs" src="../assets/icn_arrow2.svg"
+                                             alt="arrow">
+                                    </div>
+                                </a>
+
+                            </div>
+                            <div class="col-6 d-flex justify-content-end display__lastButton">
+                                <a href="#">
+                                    <div class="display__afterButton4 d-flex justify-content-center align-items-center">
+                                        <b>50</b> <i class="bi bi-chevron-compact-down"></i>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+</main>
+<footer class="footer">
+    <div class="container">
+    <div class="row footer__row">
+        <div class="col-3">
+            <img src="../assets/footer-img1.svg" alt="logo">
+            <div class="footer__text d-flex">
+                <address class="footer__text-address d-flex align-items-center">
+                    <a href="#" class="d-flex align-items-center"><i class="bi bi-geo-alt-fill footer__text-i"></i>
+                        <p class="footer__text-p">
+                            344, rue Jardin Colar - 34130
+                            LANSARGUES - FRANCE
+                        </p>
+                    </a>
+
+
+                </address>
+                <div class="footer__text-tel d-flex align-items-center">
+                    <a href="tel:+33 (0)4 99 63 20 50" class=" d-flex align-items-center">
+                        <i class="bi bi-telephone-fill footer__text-i"></i>
+                        <p class="footer__text-p">+33 (0)4 99 63 20 50</p>
+                    </a>
+
+                </div>
+                <div class="footer__text-email d-flex align-items-center ">
+                    <a href="mailto:sales@duodisplay.com " class="d-flex align-items-center">
+                    <i class="bi bi-envelope-fill footer__text-i"></i>
+                        <p class="footer__text-p">sales@duodisplay.com</p>
+                    </a>
+
+                </div>
+                <img class="footer__text-img2" src="../assets/footer-img2.svg" alt="france">
+            </div>
+
+        </div>
+        <div class="col-6 footer__col-6 d-flex">
+            <div class="col-3">
+                <h4 class="footer__headings">Products</h4>
+                <ul class="footer__list d-flex">
+                  <li class="footer__list-option"><a href="#"> Banner stands</a></li>
+                  <li class="footer__list-option"><a href="#"> Display Wall</a></li>
+                  <li class="footer__list-option"><a href="#">Counters</a></li>
+                  <li class="footer__list-option"><a href="#"> Outdoor</a></li>
+                  <li class="footer__list-option"><a href="#">Frames</a></li>
+                  <li class="footer__list-option"><a href="#"> Stands</a></li>
+                  <li class="footer__list-option"><a href="#"> Outdoor</a></li>
+                  <li class="footer__list-option"><a href="#"> Frames</a></li>
+                  <li class="footer__list-option"><a href="#"> Stands</a></li>
+                </ul>
+            </div>
+            <div class="col-3">
+                <h4 class="footer__headings">Applications</h4>
+                <ul class="footer__list d-flex">
+                    <li class="footer__list-option"><a href="#"> Tradeshows</a></li>
+                    <li class="footer__list-option"><a href="#">Events</a></li>
+                    <li class="footer__list-option"><a href="#">Road-shows</a></li>
+                    <li class="footer__list-option"><a href="#"> Decoration</a></li>
+                    <li class="footer__list-option"><a href="#">Retail</a></li>
+                    <li class="footer__list-option"><a href="#"> Printing</a></li>
+                </ul>
+            </div>
+            <div class="col-3">
+                <h4 class="footer__headings">My Profile</h4>
+                <ul class="footer__list d-flex">
+                    <li class="footer__list-option"><a href="#">Dashboard</a></li>
+                    <li class="footer__list-option"><a href="#">Account</a></li>
+                    <li class="footer__list-option"><a href="#">Orders</a></li>
+                    <li class="footer__list-option"><a href="#"> Quotes</a></li>
+                    <li class="footer__list-option"><a href="#">My Contacts</a></li>
+                </ul>
+            </div>
+            <div class="col-3">
+                <h4 class="footer__headings">Duo Display</h4>
+                <ul class="footer__list d-flex">
+                    <li class="footer__list-option"><a href="#">About Duo</a></li>
+                    <li class="footer__list-option"><a href="#">General terms</a></li>
+                    <li class="footer__list-option"><a href="#">Warranty</a></li>
+                    <li class="footer__list-option"><a href="#">Legal notice</a></li>
+                    <li class="footer__list-option"><a href="#">Contact us</a></li>
+                </ul>
+
+            </div>
+        </div>
+        <div class="col-3 d-flex footer__data">
+
+            <h4 class="footer__headings">Newsletter</h4>
+            <form action="#" class="footer__form">
+                <input type="email" id="footer__input" placeholder="Your email">
+                <a href="#"><i class="bi bi-send-fill footer-i"></i></a>
+                <label for="footer__input"></label>
+            </form>
+
+            <div class="dropdown">
+                <button class=" btn-sm dropdown-toggle p-0 footer__btn" type="button" id="lang-footer-menu"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-globe2 header__contact-globe-icon"></i>
+                    <span>English</span>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="lang-footer-menu">
+                    <li>
+                        <button class="dropdown-item" type="button">Ukrainian</button>
+                    </li>
+                    <li>
+                        <button class="dropdown-item" type="button">Turkish</button>
+                    </li>
+                    <li>
+                        <button class="dropdown-item" type="button">German</button>
+                    </li>
+                </ul>
+            </div>
+            <ul class="footer__social-list d-flex">
+               <li><a href="#"><img src="../assets/footer-social1.svg" alt="social1"></a></li>
+                <li><a href="#"><img src="../assets/footer-social2.svg" alt="social2"></a></li>
+                <li><a href="#"><img src="../assets/footer-social3.svg" alt="social3"></a></li>
+                <li><a href="#"><img src="../assets/footer-social4.svg" alt="social4"></a></li>
+                <li><a href="#"><img src="../assets/footer-social5.svg" alt="social5"></a></li>
+                <li><a href="#"><img src="../assets/footer-social6.svg" alt="social6"></a></li>
+            </ul>
+        </div>
+
+        </div>
+    </div>
+    <div class="footer__after">
+        <div class="container">
+            <div class="row">
+        <div class="col-6 d-flex footer__after-col">
+            <p class="footer__after-p">© 2021 Duo Industrie. All rights reserved. From Duo with</p>
+            <i class="bi bi-heart footer__after-i"></i>
+        </div>
+        <div class="col-6 d-flex justify-content-end">
+            <button class="footer__after-btn d-flex align-items-center justify-content-center">
+                <a href="#">
+                    <img src="../assets/icn_arrow3.svg" alt="arrow3">
+                </a>
+            </button>
+        </div>
+        </div>
+        </div>
+    </div>
+
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+</body>
+</html>
